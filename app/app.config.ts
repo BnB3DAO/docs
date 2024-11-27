@@ -28,7 +28,6 @@ export default defineAppConfig({
     }]
   },
   footer: {
-    credits: 'Copyright © 2023',
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-nuxtdotjs',
