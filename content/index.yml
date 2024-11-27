@@ -1,13 +1,13 @@
-title: 'Nuxt UI Pro - Docs template'
-description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+title: 'BnB3 Docs'
+description: BnB3 is a decentralized airbnb platform for crypto natives cities.
 navigation: false
 hero:
-  title: 'Build your docs in seconds'
-  description: 'Create your documentation in seconds with this template!'
+  title: 'Get to know BnB3 in seconds'
+  description: 'Get started with BnB3DAO in seconds with this docs site!'
   orientation: horizontal
   headline:
-    label: Made with Nuxt UI Pro
-    to: https://ui.nuxt.com/pro
+    label: Made with ❤️ by RWA-Wallet.com
+    to: https://rwa-wallet.com
     icon: i-heroicons-arrow-top-right-on-square-20-solid
   links:
     - label: Get started
@@ -15,15 +15,15 @@ hero:
       trailing: true
       to: '/getting-started'
       size: lg
-    - label: Use this template
-      icon: i-simple-icons-github
+    - label: Launch BnB3 DApp
+      icon: mdi:application
       size: lg
       color: gray
-      to: https://github.com/nuxt-ui-pro/docs
+      to: https://bnb3.rwa-wallet.com
       target: _blank
   code: |
     ```bash [Terminal]
-    npx nuxi init -t github:nuxt-ui-pro/docs
+    git clone --depth 1 git@github.com:BnB3DAO/docs.git
     ```
 features:
   title: 'All-in-one docs template'

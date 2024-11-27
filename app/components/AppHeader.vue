@@ -1,30 +1,32 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content'
+import type { NavItem } from "@nuxt/content";
 
-const navigation = inject<NavItem[]>('navigation', [])
+const navigation = inject<NavItem[]>("navigation", []);
 
-const { header } = useAppConfig()
+const { header } = useAppConfig();
 </script>
 
 <template>
   <UHeader>
     <template #logo>
-      <template v-if="header?.logo?.dark || header?.logo?.light">
-        <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
-      </template>
-      <template v-else>
-        Nuxt UI Pro <UBadge
-          label="Docs"
+      <div class="flex items-center gap-2">
+        <img
+          v-if="header.logo"
+          :src="header.logo"
+          :alt="header.title"
+          class="h-10"
+        />
+        <span v-else>{{ header.title }}</span>
+        <UBadge
+          v-if="header.titleBadge"
+          :label="header.titleBadge"
           variant="subtle"
           class="mb-0.5"
         />
-      </template>
+      </div>
     </template>
 
-    <template
-      v-if="header?.search"
-      #center
-    >
+    <template v-if="header?.search" #center>
       <UContentSearchButton class="hidden lg:flex" />
     </template>
 
@@ -35,13 +37,11 @@ const { header } = useAppConfig()
         class="lg:hidden"
       />
 
-      <UColorModeButton v-if="header?.colorMode" />
-
       <template v-if="header?.links">
         <UButton
           v-for="(link, index) of header.links"
           :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+          v-bind="{ color: 'gray', variant: 'link', ...link }"
         />
       </template>
     </template>
