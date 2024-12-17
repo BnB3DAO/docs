@@ -28,21 +28,15 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/nuxt-ui-pro/docs/edit/main/content',
       links: [{
         icon: 'i-heroicons-star',
-        label: 'Star on GitHub',
-        to: 'https://github.com/nuxt/ui',
+        label: 'Go to BNB3',
+        to: 'https://hashkey-testnet-bnb3.rwa-wallet.com',
         target: '_blank'
       }, {
         icon: 'i-heroicons-book-open',
-        label: 'Nuxt UI Pro docs',
-        to: 'https://ui.nuxt.com/pro/guide',
-        target: '_blank'
-      }, {
-        icon: 'i-simple-icons-nuxtdotjs',
-        label: 'Purchase a license',
-        to: 'https://ui.nuxt.com/pro/purchase',
+        label: 'Give response for us',
+        to: 'https://github.com/BnB3DAO/Press-Conference/issues?page=1&q=is%3Aissue+is%3Aopen',
         target: '_blank'
       }]
     }
