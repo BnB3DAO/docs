@@ -1,0 +1,27 @@
+name: Sync Repositories
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Stark"
+          git config --global user.email "stark@rwa-wallet.com"
+
+      - name: Push to second repository
+        env:
+          SECOND_REPO_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
+        run: |
+          git remote add second-repo https://x-access-token:${SECOND_REPO_TOKEN}@github.com/用户名/第二个仓库名.git
+          git push second-repo main

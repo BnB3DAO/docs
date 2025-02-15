@@ -13,7 +13,7 @@ hero:
     - label: Get started
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
-      to: '/getting-started'
+      to: '/new-guide/bnb3dao'
       size: lg
     - label: Launch BnB3 DApp
       icon: mdi:application
