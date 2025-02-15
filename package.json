@@ -1,5 +1,6 @@
 {
-  "name": "nuxt-ui-pro-template-docs",
+  "name": "bnb3-docs",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
