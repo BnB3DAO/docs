@@ -23,5 +23,5 @@ jobs:
         env:
           SECOND_REPO_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
         run: |
-          git remote add second-repo https://x-access-token:${SECOND_REPO_TOKEN}@github.com/HelloRWA/bnb3-docs.git
+          git remote add second-repo https://x-access-token:${SECOND_REPO_TOKEN}@github.com/HelloRWA/bnb3-docs
           git push second-repo main
