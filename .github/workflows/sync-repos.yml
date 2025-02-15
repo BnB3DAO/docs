@@ -27,5 +27,13 @@ jobs:
           echo "Adding remote repository..."
           git remote add second-repo https://Stark:${GITHUB_TOKEN}@github.com/HelloRWA/bnb3-docs.git
           
+          echo "Rewriting commit author..."
+          git filter-branch --env-filter '
+            export GIT_AUTHOR_NAME="Stark"
+            export GIT_AUTHOR_EMAIL="stark@rwa-wallet.com"
+            export GIT_COMMITTER_NAME="Stark"
+            export GIT_COMMITTER_EMAIL="stark@rwa-wallet.com"
+          ' HEAD
+          
           echo "Pushing to remote repository..."
-          git push second-repo main
+          git push -f second-repo main
