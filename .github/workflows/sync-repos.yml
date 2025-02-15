@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.SECOND_REPO_TOKEN }}
 
       - name: Configure Git
         run: |
@@ -21,13 +22,10 @@ jobs:
 
       - name: Push to second repository
         env:
-          SECOND_REPO_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
         run: |
-          echo "Testing repository access..."
-          curl -H "Authorization: token ${SECOND_REPO_TOKEN}" https://api.github.com/repos/HelloRWA/bnb3-docs
-          
           echo "Adding remote repository..."
-          git remote add second-repo https://oauth2:${SECOND_REPO_TOKEN}@github.com/HelloRWA/bnb3-docs.git
+          git remote add second-repo https://Stark:${GITHUB_TOKEN}@github.com/HelloRWA/bnb3-docs.git
           
           echo "Pushing to remote repository..."
           git push second-repo main
